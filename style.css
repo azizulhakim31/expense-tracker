@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(240, 242, 248);
+    color: rgb(40, 40, 40);
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: rgb(32, 32, 53);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: rgb(82, 81, 81);
+}
+
+/* Summary */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.balance {
+    border-color: rgb(72, 72, 250);
+}
+
+.balance h2 {
+    color: rgb(72, 72, 250);
+}
+
+.income {
+    border-color: rgb(51, 140, 73);
+}
+
+.income h2 {
+    color: rgb(51, 140, 73);
+}
+
+.expense {
+    border-color: rgb(246, 53, 53);
+}
+
+.expense h2 {
+    color: rgb(246, 53, 53);
+}

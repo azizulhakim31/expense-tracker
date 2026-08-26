@@ -38,7 +38,7 @@ header p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -82,4 +82,74 @@ header p {
 
 .expense h2 {
     color: rgb(246, 53, 53);
+}
+
+/* Form */
+.form_section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form_section h2 {
+    margin-bottom: 20px;
+    color: rgb(32, 32, 53);
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(62, 62, 81);
+}
+
+.form_group input,
+.form_group select {
+    padding: 12px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.form_group input:focus,
+.form_group select:focus {
+    border-color: rgb(72, 72, 250);
+    box-shadow: 0 0 3px rgba(72, 72, 250, 0.5);
+}
+
+form button {
+    grid-column: span 2;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgb(81, 81, 244);
+    color: white;
+    font-size:16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: rgb(51, 51, 200);
+    transform: translateY(-2px);
+}
+
+form button:active{
+    transform: translateY(0);
 }

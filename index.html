@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        
+
         <header>
             <h1>Expense Tracker</h1>
             <p>Manage your income and expenses easily</p>
@@ -79,6 +79,21 @@
                 <button type="submit">Add Transaction</button>
 
             </form>
+        </section>
+
+        <!-- Transaction List -->
+        <section class="transaction_section">
+            <div class="transaction_header">
+                <h2>Transactions</h2>
+
+                <input type="text" id="search" placeholder="Search transactions...">
+            </div>
+
+            <div id="transaction_list" class="transaction_list"></div>
+
+            <p id="empty_message" class="empty_message">
+                No transactions yet
+            </p>
         </section>
     </div>
 

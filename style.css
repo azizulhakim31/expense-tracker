@@ -139,7 +139,7 @@ form button {
     border-radius: 8px;
     background: rgb(81, 81, 244);
     color: white;
-    font-size:16px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
@@ -150,6 +150,29 @@ form button:hover {
     transform: translateY(-2px);
 }
 
-form button:active{
+form button:active {
     transform: translateY(0);
+}
+
+/* Transaction header */
+.transaction_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.transaction_header h2 {
+    margin-bottom: 0;
+}
+
+#search {
+    padding: 10px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+    width: 280px;
 }

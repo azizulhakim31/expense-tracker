@@ -15,6 +15,35 @@ const expenseElement = document.getElementById("expense");
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
+// set today's date
 const today = new Date();
 const localDate = today.toLocaleDateString("en-CA");
 dateInput.value = localDate;
+
+// add transaction
+transactionForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const description = descriptionInput.value.trim();
+    const amount = Number(amountInput.value);
+    const type = typeInput.value;
+    const category = categoryInput.value;
+    const date = dateInput.value;
+
+    if (!description || amount <= 0 || !datate) {
+        alert("Please enter valid transaction details.");
+        return;
+    }
+
+    const transaction = {
+        id: Date.now(),
+        description: description,
+        amount: amount,
+        type: type,
+        category: category,
+        date: date
+    };
+
+    transactions.push(transaction);
+
+})

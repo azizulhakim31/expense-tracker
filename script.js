@@ -12,3 +12,9 @@ const searchInput = document.getElementById("search");
 const balanceElement = document.getElementById("balance");
 const incomeElement = document.getElementById("income");
 const expenseElement = document.getElementById("expense");
+
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
+const today = new Date();
+const localDate = today.toLocaleDateString("en-CA");
+dateInput.value = localDate;

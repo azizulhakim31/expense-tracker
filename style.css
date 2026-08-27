@@ -85,7 +85,8 @@ header p {
 }
 
 /* Form */
-.form_section {
+.form_section,
+.transaction_section {
     background: white;
     padding: 30px;
     border-radius: 15px;
@@ -93,7 +94,8 @@ header p {
     margin-bottom: 30px;
 }
 
-.form_section h2 {
+.form_section h2,
+.transaction_section h2 {
     margin-bottom: 20px;
     color: rgb(32, 32, 53);
 }
@@ -117,7 +119,8 @@ form {
 }
 
 .form_group input,
-.form_group select {
+.form_group select,
+#search {
     padding: 12px;
     border: 1px solid rgb(200, 200, 200);
     border-radius: 8px;
@@ -127,7 +130,8 @@ form {
 }
 
 .form_group input:focus,
-.form_group select:focus {
+.form_group select:focus,
+#search:focus {
     border-color: rgb(72, 72, 250);
     box-shadow: 0 0 3px rgba(72, 72, 250, 0.5);
 }
@@ -168,12 +172,6 @@ form button:active {
 }
 
 #search {
-    padding: 10px;
-    border: 1px solid rgb(200, 200, 200);
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-    transition: 0.2s;
     width: 280px;
 }
 

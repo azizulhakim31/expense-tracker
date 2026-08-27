@@ -176,3 +176,11 @@ form button:active {
     transition: 0.2s;
     width: 280px;
 }
+
+/* Transaction */
+
+.empty_message {
+    text-align: center;
+    color: #9ca3af;
+    padding: 30px;
+}

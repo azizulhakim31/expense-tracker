@@ -83,3 +83,25 @@ function formatDate(date) {
         year: "numeric"
     });
 }
+
+// update summery
+function updateSummary() {
+    const income = transactions
+        .filter(transaction => transaction.type === "income")
+        .reduce((total, transaction) => {
+            return total + transaction.amount;
+        }, 0);
+    const expense = transactions
+        .filter(transaction => transaction.type === "expense")
+        .reduce((total, transaction) => {
+            return total + transaction.amount;
+        }, 0);
+
+    const balance = income - expense;
+
+    balanceElement.textContent = formatMoney(balance);
+    incomeElement.textContent = formatMoney(income);
+    expenseElement.textContent = formatMoney(expense);
+}
+
+updateSummary();

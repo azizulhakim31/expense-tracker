@@ -52,3 +52,11 @@ transactionForm.addEventListener("submit", function (e) {
     transactions.push(transaction);
     saveTransactions();
 });
+
+// delete transaction
+function deleteTransaction(id) {
+    transactions = transactions.filter(
+        transaction => transaction.id !== id
+    );
+    saveTransactions();
+}

@@ -51,6 +51,13 @@ transactionForm.addEventListener("submit", function (e) {
 
     transactions.push(transaction);
     saveTransactions();
+
+    transactionForm.reset();
+
+    // reset date after form reset
+    const today = new Date();
+    const localDate = today.toLocaleDateString("en-CA");
+    dateInput.value = localDate;
 });
 
 // delete transaction

@@ -67,3 +67,19 @@ function deleteTransaction(id) {
     );
     saveTransactions();
 }
+
+// format money
+function formatMoney(amount) {
+    return "$" + amount.toFixed(2);
+}
+
+// format date
+function formatDate(date) {
+    const dateObject = new Date(date + "T00:00:00");
+
+    return dateObject.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
+}

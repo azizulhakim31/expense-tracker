@@ -20,6 +20,11 @@ const today = new Date();
 const localDate = today.toLocaleDateString("en-CA");
 dateInput.value = localDate;
 
+// save transactions
+function saveTransactions() {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+
 // add transaction
 transactionForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -30,7 +35,7 @@ transactionForm.addEventListener("submit", function (e) {
     const category = categoryInput.value;
     const date = dateInput.value;
 
-    if (!description || amount <= 0 || !datate) {
+    if (!description || amount <= 0 || !date) {
         alert("Please enter valid transaction details.");
         return;
     }
@@ -45,5 +50,5 @@ transactionForm.addEventListener("submit", function (e) {
     };
 
     transactions.push(transaction);
-
-})
+    saveTransactions();
+});

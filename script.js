@@ -51,6 +51,7 @@ transactionForm.addEventListener("submit", function (e) {
 
     transactions.push(transaction);
     saveTransactions();
+    updateSummary();
 
     transactionForm.reset();
 
@@ -66,6 +67,7 @@ function deleteTransaction(id) {
         transaction => transaction.id !== id
     );
     saveTransactions();
+    updateSummary();
 }
 
 // format money

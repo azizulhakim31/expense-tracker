@@ -118,6 +118,20 @@ function renderTransactions(filteredTransactions = transactions) {
 
     emptyMessage.style.display = "none";
 
+    // newest transactions first
+    const sortedTransactions = [...filteredTransactions].sort(
+        (a, b) => b.id - a.id
+    );
+
+    sortedTransactions.forEach(transaction => {
+        const transactionElement = document.createElement("div");
+
+        transactionElement.className = "transaction";
+
+        const icon = transaction.type === "income" ? "↑" : "↓";
+        const size = transaction.type === "income" ? "+" : "-";
+
+    })
 }
 
 updateSummary();

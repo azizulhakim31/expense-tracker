@@ -106,4 +106,18 @@ function updateSummary() {
     expenseElement.textContent = formatMoney(expense);
 }
 
+// render transacstions
+function renderTransactions(filteredTransactions = transactions) {
+
+    transactionList.innerHTML = "";
+
+    if (filteredTransactions.length === 0) {
+        emptyMessage.style.display = "block";
+        return;
+    }
+
+    emptyMessage.style.display = "none";
+
+}
+
 updateSummary();

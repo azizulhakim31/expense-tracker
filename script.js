@@ -187,4 +187,11 @@ searchInput.addEventListener("input", function () {
     renderTransactions(filteredTransactions);
 });
 
+// prevent HTML injection
+function escapeHTML(value) {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+}
+
 updateSummary();

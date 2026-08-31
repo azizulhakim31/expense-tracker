@@ -51,7 +51,7 @@ transactionForm.addEventListener("submit", function (e) {
 
     transactions.push(transaction);
     saveTransactions();
-    updateSummary();
+    updateUI();
 
     transactionForm.reset();
 
@@ -67,7 +67,7 @@ function deleteTransaction(id) {
         transaction => transaction.id !== id
     );
     saveTransactions();
-    updateSummary();
+    updateUI();
 }
 
 // format money
@@ -129,7 +129,7 @@ function renderTransactions(filteredTransactions = transactions) {
         transactionElement.className = "transaction";
 
         const icon = transaction.type === "income" ? "↑" : "↓";
-        const size = transaction.type === "income" ? "+" : "-";
+        const sign = transaction.type === "income" ? "+" : "-";
 
         transactionElement.innerHTML = `
         <div class="transaction_info">
@@ -157,9 +157,10 @@ function renderTransactions(filteredTransactions = transactions) {
 
             <button 
                 class="delete_btn" 
-                onclick="deleteTransaction($(transaction.id))" title="Delete transaction"
+                onclick="deleteTransaction(${transaction.id})" title="Delete transaction"
             >
-                🗑
+                <img src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png">
+
             </button>
         </div>
 
@@ -169,12 +170,14 @@ function renderTransactions(filteredTransactions = transactions) {
     });
 }
 
-// search
-searchInput.addEventListener("input", function () {
-
+function getFilteredTransactions() {
     const searchTerm = searchInput.value.toLowerCase().trim();
 
-    const filteredTransactions = transactions.filter(transaction => {
+    if (!searchTerm) {
+        return transactions;
+    }
+
+    return transactions.filter(transaction => {
         return (
             transaction.description
                 .toLowerCase()
@@ -184,7 +187,11 @@ searchInput.addEventListener("input", function () {
                 .includes(searchTerm)
         );
     });
-    renderTransactions(filteredTransactions);
+}
+
+// search
+searchInput.addEventListener("input", function () {
+    renderTransactions(getFilteredTransactions());
 });
 
 // prevent HTML injection
@@ -197,7 +204,7 @@ function escapeHTML(value) {
 // update UI
 function updateUI() {
     updateSummary();
-    renderTransactions();
+    renderTransactions(getFilteredTransactions());
 }
 
 updateUI();

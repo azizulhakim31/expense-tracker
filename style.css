@@ -182,3 +182,103 @@ form button:active {
     color: #9ca3af;
     padding: 30px;
 }
+
+.transaction_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    border: 1px solid rgb(209, 209, 221);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.transaction:hover {
+    background: rgb(243, 244, 244);
+}
+
+.transaction_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.transaction_icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.transaction_icon.income {
+    background: rgb(192, 248, 213);
+    color: rgb(2, 107, 41);
+    border: none;
+}
+
+.transaction_icon.expense {
+    background: rgb(243, 220, 220);
+    color: rgb(216, 30, 30);
+    border: none;
+}
+
+.transaction_details h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.transaction_details p {
+    color: gray;
+    font-size: 13px;
+}
+
+.transaction_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.transaction_amount {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.transaction_amount.income {
+    color: rgb(18, 180, 18)
+}
+
+.transaction_amount.expense {
+    color: rgb(224, 52, 52)
+}
+
+.delete_btn {
+    border: none;
+    background: rgb(243, 220, 220);
+    color: rgb(216, 30, 30);
+    width: 35px;
+    height: 35px;
+    border-radius: 7px;
+    font-size: 16px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.delete_btn img{
+    width: 18px;
+    color:white;
+    /* text-align: center; */
+}
+
+.delete_btn:hover {
+    background: rgb(247, 182, 182);
+    transform: scale(105%);
+}

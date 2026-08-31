@@ -159,7 +159,7 @@ function renderTransactions(filteredTransactions = transactions) {
                 class="delete_btn" 
                 onclick="deleteTransaction(${transaction.id})" title="Delete transaction"
             >
-                <img src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png">
+                <img src="images/bin.png">
 
             </button>
         </div>

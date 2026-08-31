@@ -194,4 +194,10 @@ function escapeHTML(value) {
     return div.innerHTML;
 }
 
-updateSummary();
+// update UI
+function updateUI() {
+    updateSummary();
+    renderTransactions();
+}
+
+updateUI();

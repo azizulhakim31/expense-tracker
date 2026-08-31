@@ -131,7 +131,42 @@ function renderTransactions(filteredTransactions = transactions) {
         const icon = transaction.type === "income" ? "↑" : "↓";
         const size = transaction.type === "income" ? "+" : "-";
 
-    })
+        transactionElement.innerHTML = `
+        <div class="transaction_info">
+
+            <div class="transaction_icon ${transaction.type}">
+                ${icon}
+            </div>
+
+            <div class="transaction_details">
+                <h3>${escapeHTML(transaction.description)}</h3>
+                <p>
+                    ${escapeHTML(transaction.category)}
+                    •
+                    ${formatDate(transaction.date)}
+                </p>
+            </div>
+
+        </div>
+
+        <div class="transaction_right">
+
+            <span class="transaction_amount ${transaction.type}">
+                ${sign}${formatMoney(transaction.amount)}
+            </span>
+
+            <button 
+                class="delete_btn" 
+                onclick="deleteTransaction($(transaction.id))" title="Delete transaction"
+            >
+                🗑
+            </button>
+        </div>
+
+        `;
+
+        transactionList.appendChild(transactionElement);
+    });
 }
 
 updateSummary();

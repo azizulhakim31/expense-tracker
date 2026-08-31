@@ -272,13 +272,110 @@ form button:active {
     cursor: pointer;
 }
 
-.delete_btn img{
+.delete_btn img {
     width: 18px;
-    color:white;
-    /* text-align: center; */
 }
 
 .delete_btn:hover {
     background: rgb(247, 182, 182);
     transform: scale(105%);
+}
+
+@media (max-width: 768px) {
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    form button {
+        grid-column: span 1;
+    }
+
+    .transaction_header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .transaction {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .transaction_info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .transaction_details {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .transaction_details h3,
+    .transaction_details p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .transaction_right {
+        flex-shrink: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .form_section,
+    .transaction_section {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .transaction {
+        padding: 12px 10px;
+    }
+
+    .transaction_icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .transaction_details h3 {
+        font-size: 14px;
+    }
+
+    .transaction_details p {
+        font-size: 11px;
+    }
+
+    .transaction_amount {
+        font-size: 14px;
+    }
+
+    .delete_btn {
+        width: 32px;
+        height: 32px;
+    }
 }

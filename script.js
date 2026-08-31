@@ -169,4 +169,22 @@ function renderTransactions(filteredTransactions = transactions) {
     });
 }
 
+// search
+searchInput.addEventListener("input", function () {
+
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    const filteredTransactions = transactions.filter(transaction => {
+        return (
+            transaction.description
+                .toLowerCase()
+                .includes(searchTerm) ||
+            transaction.category
+                .toLowerCase()
+                .includes(searchTerm)
+        );
+    });
+    renderTransactions(filteredTransactions);
+});
+
 updateSummary();
